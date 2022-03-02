@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+/* Globales */
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+/* Navbar */
+.navBar {
+  align-items: center;
+}
+.itemNavBar {
+  text-decoration: none;
+  color: #ffff;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing:2.2px;
+}
+.itemNavBar:hover {
+  color: #ac2828;
+}
+.itemLogo {
+  color: #ac2828;
+}
+
