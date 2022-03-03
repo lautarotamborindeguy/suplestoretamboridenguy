@@ -60,3 +60,12 @@
   color: #ac2828;
 }
 
+/* Cart */
+.containerListCart {
+  border: 2px solid #ac2828;
+  border-radius: 20px;
+}
+.titleArticleCart {
+  font-weight: 700;
+  font-size: 25px;
+}
