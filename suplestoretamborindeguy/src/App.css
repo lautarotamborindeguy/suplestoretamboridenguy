@@ -62,10 +62,16 @@
 
 /* Cart */
 .containerListCart {
-  border: 2px solid #ac2828;
+  border: 1.2px solid #ac2828;
   border-radius: 20px;
+  box-shadow: 0px 0px 7px 0px rgb(105, 105, 105);
 }
 .titleArticleCart {
   font-weight: 700;
   font-size: 25px;
+  margin-bottom: 0;
+}
+.imagesCart {
+  width: 70px;
+  height: 70px;
 }
