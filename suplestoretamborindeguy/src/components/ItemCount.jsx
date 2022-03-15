@@ -4,14 +4,13 @@ export default function ItemCount (props)  {
     let {stock} = props
     const [count,setCount] = useState(0)
 
-    const chequeoStockSuma=()=> {
-        
-        if(props.stock > count) {
+    const chequeoStockSuma=()=> {   
+        if(stock > count) {
             setCount(count + 1)
         }
     }
     const chequeoStockResta=()=> {
-        if(props.stock >= count && count > 0) {
+        if(count > 0) {
             setCount(count - 1)
         }
     }

@@ -1,8 +1,9 @@
-import ItemCount from "./ItemCount";
-const ItemCart = (props) =>  {
-    let {titulo,descripcion,precio,images,altImages, stock} = props
+import React from 'react'
+
+const Item = (props) =>  {
+    let {titulo, precio, images, altImages, descripcion, stock} = props
     return (
-            <div>
+        <div>
                 <div className="mt-4 containerCart p-2">
                     <div className="d-flex justify-content-between align-items-center">
                         <h2 className="titleArticleCart">{titulo}</h2>
@@ -13,9 +14,9 @@ const ItemCart = (props) =>  {
                         <p className="mt-1 mb-1">{descripcion}</p>
                     </div>
                     <p className="fw-bold mb-0">En Stock: <span className="number-stock">{stock}</span></p>
-                    <ItemCount stock={stock}/>
                 </div>
-            </div>
+        </div>
     )
 }
-export default ItemCart;
+
+export default Item
