@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Item = (props) =>  {
-    let {titulo, precio, images, altImages, descripcion, stock} = props
+    let {titulo, precio, images, altImages, descripcion, stock, key} = props
     return (
         <div>
                 <div className="mt-4 containerCart p-2">
