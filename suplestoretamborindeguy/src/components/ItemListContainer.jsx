@@ -1,23 +1,21 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import ItemCart from "./ItemCart";
 import ItemList from "./ItemList";
 function ItemListContainer () {
-    function productosItem (){
-        return new Promise((resolve, reject) =>{
+    
+    const [productos, setProductos] = useState([])
+    
+    useEffect(() =>{
+        const promesa = new Promise ((resolve, reject) => {
             setTimeout(() => {
-                let productos = [{key: 1, nombre: 'Whey Protein', descripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', precio: 2000, urlImages: 'images/wheyprotein.jpg', altImages: 'Imagen del Producto', stock: 3}, {key: 2, nombre: 'Creatina', descripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', precio: 500, urlImages: 'images/wheyprotein.jpg', altImages: 'Imagen del Producto', stock: 5}, {key: 3, nombre: 'Bcaa', descripcion: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', precio: 1000, urlImages: 'images/wheyprotein.jpg', altImages: 'Imagen del Producto', stock: 0}]
-                
-                if(productos.lenght === 0) {
-                    reject("No hay productos disponibles")
-                } else {
-                    resolve(productos)
-                }
+                resolve([{id: 1, nombre: "Whey Protein", descripcion: "La proteína whey es el suplemento proteico que se obtiene a partir del aislamiento del suero de la leche.", precio: 2000, urlImages: "images/wheyprotein.jpg", altImages: "Whey Protein", stock: 2},
+                    {id: 1, nombre: "Creatina", descripcion: "lorem impsum.", precio: 500, urlImages: "images/wheyprotein.jpg", altImages: "Creatina", stock: 3},
+                    {id: 1, nombre: "Bcaa", descripcion: "lorem impsum.", precio: 300, urlImages: "images/wheyprotein.jpg", altImages: "Bcaa", stock: 0}
+                ])
             }, 2000)
-        }) 
-    }
-    const [productos, setProductos] = useState([productosItem().then((resultado) => {
-        return resultado
-    })])
+        })
+        promesa.then(res => setProductos(res))
+    }, [])
     return (
         <div className="container containerListCart">
             <ItemCart titulo="Whey Protein" descripcion="La proteína whey es el suplemento proteico que se obtiene a partir del aislamiento del suero de la leche." precio="$2.000" images="images/wheyprotein.jpg" altImages="Whey Protein" stock="2" />
