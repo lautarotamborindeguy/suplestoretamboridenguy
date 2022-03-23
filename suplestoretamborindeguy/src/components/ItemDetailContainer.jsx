@@ -20,7 +20,6 @@ function ItemDetailContainer () {
     return (
         <div className="container containerListCart">
             <ItemDetail producto={producto}/>
-            {console.log(producto)}
         </div>
     )
 } 
