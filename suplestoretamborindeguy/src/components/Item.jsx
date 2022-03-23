@@ -1,5 +1,5 @@
 import React from 'react'
-
+import ItemCount from './ItemCount'
 const Item = ({producto}) =>  {
     let {nombre, precio, urlImages, altImages, descripcion, stock} = producto
     return (
@@ -13,8 +13,8 @@ const Item = ({producto}) =>  {
                         <img src={urlImages} alt={altImages} className="imagesCart"/>
                         <p className="mt-1 mb-1">{descripcion}</p>
                     </div>
-                    <p className="fw-bold mb-0">En Stock: <span className="number-stock">{stock}</span></p>
-                    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <p className="fw-bold mb-3">En Stock: <span className="number-stock">{stock}</span></p>
+                    <button type="button" className="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Ver Más
                     </button>
                     <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -30,6 +30,7 @@ const Item = ({producto}) =>  {
                             </div>
                         </div>
                     </div>
+                    <ItemCount stock={stock}/>
                 </div>
         </div>
     )
