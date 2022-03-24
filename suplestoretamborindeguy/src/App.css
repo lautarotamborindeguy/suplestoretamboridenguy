@@ -49,9 +49,9 @@
 .itemNavBar {
   text-decoration: none;
   color: #ffff;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing:2.2px;
+  letter-spacing: 2.2px;
 }
 .itemNavBar:hover {
   color: #ac2828;
@@ -112,11 +112,11 @@
   width: 18px;
   left: 7px;
   top: 15px;
-  background: #E26E6E;
+  background: #e26e6e;
   transition: all 0.3s ease-in-out;
 }
 .counter .minus:hover {
-  background: #E26E6E;
+  background: #e26e6e;
 }
 .counter .minus:hover .line {
   background: #fff;
@@ -138,7 +138,7 @@
   width: 18px;
   left: 7px;
   top: 15px;
-  background: #8ED273;
+  background: #8ed273;
   transition: all 0.3s ease-in-out;
 }
 .counter .plus .line-v {
@@ -147,13 +147,14 @@
   width: 2px;
   left: 15px;
   top: 7px;
-  background: #8ED273;
+  background: #8ed273;
   transition: all 0.3s ease-in-out;
 }
 .counter .plus:hover {
-  background: #8ED273;
+  background: #8ed273;
 }
-.counter .plus:hover .line-h, .counter .plus:hover .line-v {
+.counter .plus:hover .line-h,
+.counter .plus:hover .line-v {
   background: #fff;
 }
 .counter .number {
@@ -162,7 +163,7 @@
   height: 40px;
   font-weight: 600;
   font-size: 20px;
-  color: #6A85A0;
+  color: #6a85a0;
   line-height: 40px;
   text-align: center;
 }
@@ -177,13 +178,13 @@
 }
 .counter .number span.fadeInUp {
   -webkit-animation: fadeIn 0.3s ease-out 0.15s backwards;
-          animation: fadeIn 0.3s ease-out 0.15s backwards;
+  animation: fadeIn 0.3s ease-out 0.15s backwards;
   transform: scale(1);
   opacity: 1;
 }
 .counter .number span.fadeOutUp {
   -webkit-animation: fadeOut 0.3s ease-in;
-          animation: fadeOut 0.3s ease-in;
+  animation: fadeOut 0.3s ease-in;
   transform: scale(1.4);
   opacity: 0;
 }

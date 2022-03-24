@@ -8,9 +8,9 @@ function NavBar () {
                     <Link to="/" className="itemNavBar"><span className="itemLogo">S</span>uple<span className="itemLogo">S</span>tore</Link>
                 </div>
                 <nav className="d-flex pb-3 pt-3">
-                    <Link to="#" className="itemNavBar">Whey Protein</Link>
-                    <Link to="#" className="ms-5 itemNavBar">Creatina</Link>
-                    <Link to="#" className="ms-5 itemNavBar">Bcaa</Link>
+                    <Link to="#" className="itemNavBar">DEFINICIÓN</Link>
+                    <Link to="#" className="ms-5 itemNavBar">ENERGÍA</Link>
+                    <Link to="#" className="ms-5 itemNavBar">ADELGAZANTE</Link>
                     <Link to="#" className="ms-5 itemNavBar"><CartWidget /></Link>
                 </nav>
             </div>
