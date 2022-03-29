@@ -1,21 +1,23 @@
 import React, {useState, useEffect} from 'react'
 import ItemDetail from './ItemDetail'
+import {useParams} from 'react-router-dom'
 function ItemDetailContainer () {
     
     const [producto, setProducto] = useState([])
-    const APIURL = 'https://fakestoreapi.com/products'; 
+    const {itemId} = useParams()
+    const APIURL = 'https://raw.githubusercontent.com/lautarotamborindeguy/lautarotamborindeguy.github.io/main/suplestore/productos.json'; 
     
-    function seteandoProductos(api, id) {
-        fetch(`${api}/${id}`)
-        .then((resultado)=>{return resultado.json()})
-        .then((res) => setProducto(res))
+    function seteandoProductos(api) {
+        fetch(`${api}`)
+        .then((resultado)=>{ return resultado.json()})
+        .then((res) => setProducto(res.find(prod =>(prod.id === Number(itemId)))))
     }
     
     useEffect(() =>{
         setTimeout(() => {
             seteandoProductos(APIURL, 1)
         }, 2000)
-    }, [])
+    }, [itemId])
     
     return (
         <div className="container containerListCart">
