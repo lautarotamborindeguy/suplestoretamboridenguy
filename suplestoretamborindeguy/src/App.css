@@ -1,3 +1,6 @@
+body {
+  overflow-x:hidden
+}
 .App {
   text-align: center;
 }
@@ -39,8 +42,9 @@
 
 /* Globales */
 .container {
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
+  padding: 0;
 }
 /* Navbar */
 .navBar {
@@ -63,20 +67,35 @@
 .containerListCart {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+}
+@media screen and (max-width: 800px) {
+  .containerListCart {
+    display: block;
+  }
 }
 
-/* Cart */
+/* Item */
 .containerCart {
-  border: 1.2px solid #ac2828;
+  border: 1px solid #ac2828;
   border-radius: 20px;
   box-shadow: 0px 0px 7px 0px rgb(105, 105, 105);
-  width: 250px;
+  width: 280px;
   height: 300px;
+  margin: 0 auto;
+  padding: 0px;
+}
+.top-item {
+  background-color: #000;
+  border-top-left-radius: 19px;
+  border-top-right-radius: 19px;
+  padding: .5rem;
 }
 .titleArticleCart {
   font-weight: 700;
   font-size: 25px;
   margin-bottom: 0;
+  color: #ac2828;
 }
 .imagesCart {
   width: 70px;
