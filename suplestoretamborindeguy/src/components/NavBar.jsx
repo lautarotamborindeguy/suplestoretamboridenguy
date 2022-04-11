@@ -11,7 +11,7 @@ function NavBar () {
                     <Link to="/productos/Definición" className="itemNavBar">DEFINICIÓN</Link>
                     <Link to="/productos/Energía" className="ms-5 itemNavBar">ENERGÍA</Link>
                     <Link to="/productos/Adelgazante" className="ms-5 itemNavBar">ADELGAZANTE</Link>
-                    <Link to="#" className="ms-5 itemNavBar"><CartWidget /></Link>
+                    <Link to="CartContainer" className="ms-5 itemNavBar"><CartWidget /></Link>
                 </nav>
             </div>
         </div>

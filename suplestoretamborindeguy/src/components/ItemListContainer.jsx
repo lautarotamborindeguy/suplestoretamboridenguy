@@ -26,6 +26,7 @@ function ItemListContainer () {
             seteandoProductos(APIURL)
         }, 500)
     }, [categoryId])
+    
     return (
         <>
             <ItemList lista = {productos}/>

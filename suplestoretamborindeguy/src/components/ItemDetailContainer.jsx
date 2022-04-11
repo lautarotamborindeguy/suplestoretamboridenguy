@@ -1,6 +1,9 @@
-import React, {useState, useEffect} from 'react'
-import ItemDetail from './ItemDetail'
-import {useParams} from 'react-router-dom'
+import React, {useState, useEffect, useContext} from 'react';
+import ItemDetail from './ItemDetail';
+import {useParams} from 'react-router-dom';
+import {CartContext} from '../context/CartContext';
+import { CustomContext } from './CustomContext';
+
 function ItemDetailContainer () {
     
     const [producto, setProducto] = useState([])
@@ -18,7 +21,8 @@ function ItemDetailContainer () {
             seteandoProductos(APIURL, 1)
         }, 2000)
     }, [itemId])
-    
+    const valores = useContext(CartContext);
+
     return (
         <div className="container containerListCart">
             <ItemDetail producto={producto}/>

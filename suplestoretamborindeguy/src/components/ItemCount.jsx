@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+
 
 export default function ItemCount (props)  {
-    let {stock, count, setCount, enviarCarrito} = props
+    let {stock, count, setCount} = props
     
 
     const chequeoStockSuma=()=> {   
@@ -10,7 +10,7 @@ export default function ItemCount (props)  {
         }
     }
     const chequeoStockResta=()=> {
-        if(count > 0) {
+        if(count > 1) {
             setCount(count - 1)
         }
     }
@@ -28,7 +28,7 @@ export default function ItemCount (props)  {
                         <div className="line-v"></div>
                     </div>
                 </div>
-                <Link to={`/cart`}><p className="btn btn-success mt-5" onClick={enviarCarrito}>Agregar al Carrito</p></Link>
+               
             
        </div>
     )
