@@ -11,7 +11,6 @@ export const CustomContext = ({children})=> {
         } else {
             setProductos([...productos, newProduct]);
         }
-        
     }
     
     return(
