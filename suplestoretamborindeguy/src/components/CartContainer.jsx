@@ -5,10 +5,11 @@ import Cart from "./Cart";
 const CartContainer = () =>  {
     const valores = useContext(CartContext);
     let productosContexto = valores.productos
-    
+  
     return (
-        <div className='containerListCart container'>
+        <div className='container container-cart'>
           {productosContexto.map(producto => <Cart producto={producto}/>)}
+          <br />
         </div>  
     )
 }

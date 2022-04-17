@@ -12,9 +12,22 @@ export const CustomContext = ({children})=> {
             setProductos([...productos, newProduct]);
         }
     }
-    
+    const removeProduct = (objRemove)=> {
+        for (let i = 0; i < productos.length; i++) {
+            const element = productos[i];
+            
+            if(element.id === objRemove.id) {
+                console.log(productos)
+                console.log(element.id)
+                console.log(objRemove.id)
+                console.log(element)
+                productos.splice(element-1,1);
+                console.log(productos)
+            }
+        }
+    }
     return(
-        <CartContext.Provider value={{productos, addProductos}}>
+        <CartContext.Provider value={{productos, addProductos, removeProduct}}>
             {children}
         </CartContext.Provider>
     )

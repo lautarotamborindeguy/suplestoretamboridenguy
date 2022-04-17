@@ -19,12 +19,12 @@ function ItemDetailContainer () {
     useEffect(() =>{
         setTimeout(() => {
             seteandoProductos(APIURL, 1)
-        }, 2000)
+        }, 500)
     }, [itemId])
     const valores = useContext(CartContext);
 
     return (
-        <div className="container containerListCart">
+        <div className="container">
             <ItemDetail producto={producto}/>
         </div>
     )

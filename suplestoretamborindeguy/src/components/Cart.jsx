@@ -1,23 +1,29 @@
-import React, {useState} from 'react';
-
+import React, {useState, useContext} from 'react';
+import ItemCount from './ItemCount'
+import { CartContext } from '../context/CartContext';
 
 const Cart = ({producto}) =>  {
-    let {nombre, precio, urlImages, altImages, descripcion, stock} = producto
-    
-    return (
-            <div>
-                    <div className="mt-4 p-2">
-                        <div className="d-flex justify-content-between align-items-center">
-                            <h2 className="titleArticleCart">{nombre}</h2>
-                            <p className="fw-bold mb-0">${precio}</p>
-                        </div>
-                        <div className="d-flex align-items-center">
-                            <img src={urlImages} alt={altImages} className="imagesCart" />
-                            <p className="mt-1 mb-1">{descripcion}</p>
-                        </div>
-                        <p className="fw-bold mb-0"> {stock}</p>
-                    </div>
+    let {id, nombre, precio, urlImages, altImages, stock, count} = producto
+    const [count2 ,setCount2] = useState(count)
+    const valores = useContext(CartContext)
+    const objRemove = {
+        id
+    }
+    return (       
+        <div className="item-cart">
+            <img src={urlImages} alt={altImages} className="image-cart"/>
+            <div className='d-flex w-100 mt-4 justify-content-between'>
+                <h2 className="title-cart">{nombre}</h2> 
+                <div className='d-flex justify-content-between'>
+                    <div>
+                        <ItemCount stock={stock} count={count2} setCount={setCount2} />
+                        <p className="stock-cart">{stock} Disponibles</p> 
+                    </div>     
+                    <p className="precio-cart ml-5">${precio * count2}</p>
+                </div>     
+                <p onClick={()=>valores.removeProduct(objRemove)}>Agregar al Carrito</p>
             </div>
+        </div>
     )
 }
 

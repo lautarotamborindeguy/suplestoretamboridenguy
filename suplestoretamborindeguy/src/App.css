@@ -1,5 +1,6 @@
 body {
-  overflow-x:hidden
+  overflow-x:hidden;
+  background-color:#dfdfdf98;
 }
 .App {
   text-align: center;
@@ -77,7 +78,7 @@ body {
 
 /* Item */
 .containerCart {
-  border: 1px solid #ac2828;
+  border: 1px solid rgb(105, 105, 105);
   border-radius: 20px;
   box-shadow: 0px 0px 7px 0px rgb(105, 105, 105);
   width: 280px;
@@ -92,27 +93,113 @@ body {
   padding: .5rem;
 }
 .titleArticleCart {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 19px;
   margin-bottom: 0;
   color: #ac2828;
 }
 .imagesCart {
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
 }
 .number-stock {
   color: #ac2828;
 }
+.btn-ver {
+  background-color: #ac2828;
+  width: 100%;
+  height: 41px;
+  border: none;
+  margin-top: 5px;
+  border-bottom-left-radius: 17.9px;
+  border-bottom-right-radius: 17.9px;
+  color: #000;
+  font-weight: 700;
+  font-size: 19px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.btn-ver:hover {
+  background: #000000;
+  color: #fff;
+  transition: ease-in-out 400ms;
+}
+/* Item Detail */
+.container-detail {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #cecece;
+  border-radius: 15px;
+  box-shadow: 4px 4px 4px 0px #4d4b4b;
+}
+.images-detail {
+  width: 50%;
+}
+.title-detail {
+  color: #ac2828;
+  font-weight: 700;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: .5rem;
+}
+.precio-detail {
+  font-weight: 700;
+  margin-bottom: 0;
+  font-size: 20px;
+  margin-bottom: .5rem;
+}
 
-/* Button */
+.btn-carrito {
+  padding: 0.5rem 1rem;
+  background-color: #ac2828;
+  font-weight: 700;
+  margin-top: 60px;
+}
+.btn-carrito:hover {
+  background-color: #811f1f;
+}
+/* Cart */
+.container-cart {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  margin-top: 2rem;
+  border-radius: 10px;
+}
+.item-cart {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dddddd;
+  padding: 0 10px;
+}
+.title-cart {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ac2828;
+}
+.image-cart {
+  width: 100px;
+  height: 100px;
+}
+.precio-cart {
+  font-size: 25px;
+  margin-right: 30px;
+  margin-left: 50px;
+  width: 80px;
+}
+.stock-cart {
+  margin-top: 2.5rem;
+  color: rgb(112, 112, 112);
+  margin-left: 1rem;
+}
+/* Contador */
 .counter {
   position: absolute;
   height: 40px;
   width: 130px;
   background: #fff;
   border-radius: 20px;
-  box-shadow: 4px 8px 12px 0 rgba(0, 0, 0, 0.1);
+  
 }
 .counter .minus {
   position: absolute;
@@ -157,7 +244,7 @@ body {
   width: 18px;
   left: 7px;
   top: 15px;
-  background: #8ed273;
+  background: #e26e6e;
   transition: all 0.3s ease-in-out;
 }
 .counter .plus .line-v {
@@ -166,11 +253,11 @@ body {
   width: 2px;
   left: 15px;
   top: 7px;
-  background: #8ed273;
+  background: #e26e6e;
   transition: all 0.3s ease-in-out;
 }
 .counter .plus:hover {
-  background: #8ed273;
+  background: #e26e6e;
 }
 .counter .plus:hover .line-h,
 .counter .plus:hover .line-v {
