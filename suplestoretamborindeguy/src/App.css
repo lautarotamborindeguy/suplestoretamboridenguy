@@ -175,7 +175,6 @@ body {
 .title-cart {
   font-size: 40px;
   font-weight: 700;
-  color: #ac2828;
 }
 .image-cart {
   width: 100px;
@@ -191,6 +190,24 @@ body {
   margin-top: 2.5rem;
   color: rgb(112, 112, 112);
   margin-left: 1rem;
+  
+}
+.btn-remove {
+  padding: .5rem .5rem;
+  background-color: #ac2828;
+  border-radius: 8px;
+  height: 42px;
+  cursor: pointer;
+}
+.btn-remove:hover {
+  background-color: #811f1f;
+  color: #ffff;
+  transition: ease-in-out .3s;
+}
+.clean-cart {
+  text-align: right;
+  padding-right: 10px;
+  margin: 0;
 }
 /* Contador */
 .counter {
