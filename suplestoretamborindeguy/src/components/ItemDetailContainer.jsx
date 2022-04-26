@@ -1,31 +1,33 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import ItemDetail from './ItemDetail';
 import {useParams} from 'react-router-dom';
-import {CartContext} from '../context/CartContext';
-import { CustomContext } from './CustomContext';
+import {collection, getDocs} from 'firebase/firestore';
+import {db} from '../utils/firebase';
 
 function ItemDetailContainer () {
     
     const [producto, setProducto] = useState([])
     const {itemId} = useParams()
-    const APIURL = 'https://raw.githubusercontent.com/lautarotamborindeguy/lautarotamborindeguy.github.io/main/suplestore/productos.json'; 
     
-    function seteandoProductos(api) {
-        fetch(`${api}`)
-        .then((resultado)=>{ return resultado.json()})
-        .then((res) => setProducto(res.find(prod =>(prod.id === Number(itemId)))))
+    function seteandoProductos(data) {
+        setProducto(data.find(prod =>(prod.id === itemId)))
     }
     
-    useEffect(() =>{
-        setTimeout(() => {
-            seteandoProductos(APIURL, 1)
-        }, 500)
-    }, [itemId])
-    const valores = useContext(CartContext);
-
+    useEffect(()=>{
+        const getData = async()=>{
+            const query = collection(db, 'items');
+            const response = await getDocs(query);
+            const dataItems = response.docs.map(doc=>{return {id: doc.id, ...doc.data()}});
+            seteandoProductos(dataItems);
+        }
+        getData()
+    },[itemId])
     return (
         <div className="container">
-            <ItemDetail producto={producto}/>
+            {
+              producto ==! {} ? <div className='container-loading'><p className='loading-product'>Cargando Producto</p><div class="preloader"> </div> </div>  : <ItemDetail producto={producto}/>
+            }
+            
         </div>
     )
 } 

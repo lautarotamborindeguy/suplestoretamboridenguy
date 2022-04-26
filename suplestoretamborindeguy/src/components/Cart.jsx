@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from 'react';
+import React, {useState, useContext} from 'react';
 import ItemCount from './ItemCount'
 import { CartContext } from '../context/CartContext';
 
@@ -6,9 +6,6 @@ const Cart = ({producto}) =>  {
     let {id, nombre, precio, urlImages, altImages, stock, count} = producto
     const [count2 ,setCount2] = useState(count)
     const valores = useContext(CartContext)
-    const objRemove = {
-        id
-    }
     
     return (       
         <div className="item-cart">
@@ -20,7 +17,7 @@ const Cart = ({producto}) =>  {
                         <p className="stock-cart">{stock} Disponibles</p> 
                     </div>     
                     <p className="precio-cart ml-5">${precio * count2}</p>    
-                <p className="btn-remove"onClick={()=>valores.removeProduct(objRemove)}><i class="bi bi-trash3-fill"></i></p>
+                <p className="btn-remove"onClick={()=>valores.removeProduct(id)}><i class="bi bi-trash3-fill"></i></p>
             </div>
         </div>
     )

@@ -1,32 +1,31 @@
-import React, {useState, useEffect} from 'react'
-import ItemCart from "./ItemCart";
+import React, {useState, useEffect} from 'react';
 import ItemList from "./ItemList";
 import {useParams} from 'react-router-dom';
+import {collection, getDocs} from 'firebase/firestore';
+import {db} from '../utils/firebase';
 function ItemListContainer () {
-    const [productos, setProductos] = useState([])
-
-    
+    const [productos, setProductos] = useState([]);
     const {categoryId} = useParams()
-    const APIURL = 'https://raw.githubusercontent.com/lautarotamborindeguy/lautarotamborindeguy.github.io/main/suplestore/productos.json'; 
-    
-    function seteandoProductos(api) {
-        fetch(`${api}`)
-        .then((resultado)=>{ return resultado.json()})
-        .then((res) =>  {
+
+    function seteandoProductos(data) {
             if(!categoryId){
-                setProductos(res) 
+                setProductos(data) 
             } else {
-               setProductos(res.filter(prod =>(prod.categoria === categoryId))) 
-            }
-            
-        })        
+               setProductos(data.filter(prod =>(prod.categoria === categoryId))) 
+            }      
     }
-    useEffect(() =>{
-        setTimeout(() => {
-            seteandoProductos(APIURL)
-        }, 500)
-    }, [categoryId])
+    useEffect(()=>{
+        const getData = async()=>{
+            const query = collection(db, 'items');
+            const response = await getDocs(query);
+            const dataItems = response.docs.map(doc=>{return {id: doc.id, ...doc.data()}});
+            seteandoProductos(dataItems);
+            
+        }
+        getData()
+    },[categoryId])
     
+
     return (
         <>
             <ItemList lista = {productos}/>

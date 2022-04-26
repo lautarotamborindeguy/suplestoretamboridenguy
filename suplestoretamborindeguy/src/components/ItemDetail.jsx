@@ -7,7 +7,7 @@ const ItemDetail = ({producto}) =>  {
     let {id, nombre, precio, urlImages, altImages, descripcion, stock} = producto
     const [count,setCount] = useState(1)
     const valores = useContext(CartContext)
-    const urlRutaCorregida = "." + urlImages;
+
     const objCarrito = {
         id,
         nombre,
@@ -21,14 +21,14 @@ const ItemDetail = ({producto}) =>  {
 
     return (
                     <div className="mt-4 p-2 container-detail d-flex align-items-center">
-                        <img src={urlRutaCorregida} alt={altImages} className="images-detail"/>
+                        <img src={urlImages} alt={altImages} className="images-detail"/>
                         <div>
                             <h2 className="title-detail">{nombre}</h2>
                             <p className="precio-detail">${precio}</p>        
                             <p className="mb-2">{descripcion}</p>
                             <p className="fw-bold mb-2">Stock: {stock}</p>
                             <ItemCount stock={stock} count={count} setCount={setCount} />
-                            <Link to={`/CartContainer`}><p className="btn btn-carrito" onClick={()=>valores.addProductos(objCarrito)}>Agregar al Carrito</p></Link>
+                            <Link to={`/CartContainer`}><p className="btn btn-carrito" onClick={()=>valores.addProductos(objCarrito, objCarrito.count)}>Agregar al Carrito</p></Link>
                         </div>
                     </div>
     )
