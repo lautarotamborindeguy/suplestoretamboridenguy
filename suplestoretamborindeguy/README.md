@@ -1,3 +1,6 @@
+# Descripción del Proyecto
+El proyecto es un Ecommerce enfocado a la venta de suplementos deportivos. Se crea el proyecto con diferentes tecnologías, principalmente HTML, CSS, y React JS, también se utilizan otras como Bootstrap, Firebase. Se sientan las bases de un proyecto que irá creciendo con trabajo y dedicación.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +71,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
