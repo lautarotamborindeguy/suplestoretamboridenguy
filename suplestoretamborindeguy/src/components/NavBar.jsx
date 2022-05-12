@@ -1,14 +1,16 @@
 import CartWidget from "./CartWidget";
 import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 function NavBar () {
+    let activeStyle = { color: '#ac2828', textDecoration: 'underline' };
     const navegacion = [
         {
             name : "DEFINICIÓN",
-            url : "/productos/Definición"
+            url : "/productos/Definicion"
         },
         {
             name : "ENERGÍA",
-            url : "/productos/Energía"
+            url : "/productos/Energia"
         },
         {
             name : "ADELGAZANTE",
@@ -22,8 +24,8 @@ function NavBar () {
                     <Link to="/" className="itemNavBar"><span className="itemLogo">S</span>uple<span className="itemLogo">S</span>tore</Link>
                 </div>
                 <nav className="d-flex pb-3 pt-3">
-                    {navegacion.map(category=>(<Link to={`${category.url}`}className="ms-5 itemNavBar">{category.name}</Link>))}
-                    <Link to={`CartContainer`}className="ms-5 itemNavBar"><CartWidget /></Link>
+                    {navegacion.map(category=>(<NavLink to={`${category.url}`}  className="ms-5 itemNavBar" style={({ isActive }) => isActive ? activeStyle : undefined}>{category.name}</NavLink>))}
+                    <NavLink to={`CartContainer`} className="ms-5 itemNavBar" style={({ isActive }) => isActive ? activeStyle : undefined}><CartWidget /></NavLink>
                 </nav>
             </div>
         </div>

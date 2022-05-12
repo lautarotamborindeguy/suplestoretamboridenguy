@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Item = ({producto}) =>  {
-    let {id, nombre, precio, urlImages, altImages, categoria, stock} = producto
+    let {id, nombre, precio, urlImages, categoria, stock} = producto
     return (
         <div>
                 <div className="mt-4 containerCart bg-white">
@@ -11,7 +11,7 @@ const Item = ({producto}) =>  {
                         <p className="fw-bold mb-0 text-white">${precio}</p>
                     </div>
                     <div className="d-flex justify-content-center mb-1 mt-1">
-                        <img src={urlImages} alt={altImages} className="imagesCart"/>
+                        <img src={urlImages} className="imagesCart"/>
                     </div>
                     <p className='text-center'>Categoria: {categoria}</p>
                     <p className="fw-bold text-center">¡Restan solamente <span className="number-stock">{stock}</span> articulos de este producto!</p>

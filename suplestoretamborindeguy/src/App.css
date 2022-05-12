@@ -64,6 +64,15 @@ body {
 .itemLogo {
   color: #ac2828;
 }
+.navegacionDetail {
+  color: #000000;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.navegacionDetail:hover {
+  color: #ac2828;
+}
 /* Container List Cart */
 .containerListCart {
   display: grid;
@@ -123,6 +132,9 @@ body {
   background: #000000;
   color: #fff;
   transition: ease-in-out 400ms;
+}
+.solicitadas-cart {
+  margin: 0px;
 }
 /* Item Detail */
 .container-detail {
@@ -217,9 +229,8 @@ body {
   width: 80px;
 }
 .stock-cart {
-  margin-top: 2.5rem;
+  margin-top: 0;
   color: rgb(112, 112, 112);
-  margin-left: 1rem;
   
 }
 .total-price {

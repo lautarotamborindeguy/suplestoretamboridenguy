@@ -27,9 +27,12 @@ export const CustomContext = ({children})=> {
         console.log(totalPrice)
         return totalPrice;
     }
-
+    const getTotalProducts = () => {
+        return productos.length
+    }
+    
     return(
-        <CartContext.Provider value={{productos, addProductos, removeProduct, cleanCart, getTotalPrice}}>
+        <CartContext.Provider value={{productos, addProductos, removeProduct, cleanCart, getTotalPrice, getTotalProducts}}>
             {children}
         </CartContext.Provider>
     )
